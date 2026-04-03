@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yami Fashion | Tienda de Ropa para Mujer</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script src="script.js " defer></script>
+
+<body>
+
+    <div class="floating-buttons">
+        <a href="#" class="btn-float tiktok"><i class='bx bxl-tiktok'></i></a>
+        <a href="https://wa.me/51976956559" class="btn-float whatsapp"><i class='bx bxl-whatsapp'></i></a>
+    </div>
+
+    <header id="header">
+        <div class="logo-container">
+            <img src="imagenes/logoyami.png" alt="Logo" class="logo">
+            <span class="brand-name">Yami fashion</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content scroll-reveal">
+            <h1>TIENDA DE ROPA</h1>
+            <p class="subtitle">Elegancia y estilo exclusivo pensado para la mujer de hoy</p>
+            <a href="#productos" class="btn-main">Ver Promociones</a>
+            <div id="changing-text" class="changing-text">Colección 2026</div>
+        </div>
+    </main>
+
+
+    <section class="custom-section-yf">
+    <div class="custom-yf-container">
+        <div class="custom-yf-text-content">
+            <h2 class="custom-yf-title">Nuestra Esencia</h2>
+            <p class="custom-yf-description">
+                En <strong>Yami Fashion</strong>, no solo vendemos ropa, creamos experiencias de estilo. 
+                Cada prenda es seleccionada cuidadosamente para resaltar tu personalidad y brindarte la comodidad que mereces en cada momento del día.
+            </p>
+            <a href="#productos" class="btn-main">Saber más</a>
+        </div>
+
+        <div class="custom-yf-slider-box">
+            <div class="custom-yf-slide-wrapper">
+                <img id="custom-yf-img" src="imagenes/colores2.jpeg" alt="Slider Image">
+            </div>
+
+            
+            <div class="custom-yf-caption-container">
+                <p id="custom-yf-caption">Calidad en cada costura</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="productos" class="products-section">
+        <h2 class="scroll-reveal">Nuestros Productos</h2>
+        
+        <div class="filter-container scroll-reveal">
+            <input type="text" id="search" placeholder="¿Qué estás buscando hoy?">
+            <div class="categories">
+                <button class="btn-filter active" data-filter="all">Todos</button>
+                <button class="btn-filter" data-filter="tops">Tops</button>
+                <button class="btn-filter" data-filter="polos">Polos</button>
+                <button class="btn-filter" data-filter="pijamas">Pijamas</button>
+                <button class="btn-filter" data-filter="poleras">Poleras</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="grid-productos">
+            <div class="product-card scroll-reveal" data-category="polos">
+                <div class="product-img-container">
+                    <img src="imagenes/top1.png" alt="Polo" class="product-img" id="img-p1">
+                </div>
+                <h3>Polo Premium Dama</h3>
+                <p>Algodón reactivo</p>
+                <span class="price">--</span>
+                <div class="colors">
+                    <span class="color-dot" style="background:#a489b0; " onclick="changeColor('p1', 'imagenes/top1.png')"></span>
+                      <span class="color-dot" style="background:#edeeed; border-color: #242323ae;" onclick="changeColor('p1', 'imagenes/top1_blanco.png')"></span>
+                    <span class="color-dot" style="background:red" onclick="changeColor('p1', 'imagenes/top1_rojo.png')"></span>
+                </div>
+                <button class="btn-ws-order" onclick="orderWhatsApp('Polo Premium Dama')"><i class='bx bxl-whatsapp'></i> Pedir</button>
+            </div>
+
+            <div class="product-card scroll-reveal" data-category="tops">
+                <div class="product-img-container">
+                    <img src="imagenes/top2.png" alt="Top" class="product-img" id="img-p2">
+                </div>
+                <h3>Top Elegance Black</h3><br>
+                <p>Ajuste perfecto</p>
+                <span class="price">--</span>
+                <div class="colors">
+                    <span class="color-dot" style="background:#000000" onclick="changeColor('p2', 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80')"></span>
+                    <span class="color-dot" style="background:#ffffff" onclick="changeColor('p2', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80')"></span>
+                </div>
+                <button class="btn-ws-order" onclick="orderWhatsApp('Top Elegance Black')"><i class='bx bxl-whatsapp'></i> Pedir</button>
+            </div>
+
+            <div class="product-card scroll-reveal" data-category="pijamas">
+                <div class="product-img-container">
+                    <img src="imagenes/top3.png" alt="Pijama" class="product-img" id="img-p3">
+                </div>
+                <h3>Pijama Soft Dream</h3>
+                <p>Seda francesa</p>
+                <span class="price">--</span>
+                <div class="colors">
+                    <span class="color-dot" style="background:#f8c291" onclick="changeColor('p3', 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80')"></span>
+                    <span class="color-dot" style="background:#6a89cc" onclick="changeColor('p3', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80')"></span>
+                </div>
+                <button class="btn-ws-order" onclick="orderWhatsApp('Pijama Soft Dream')"><i class='bx bxl-whatsapp'></i> Pedir</button>
+            </div>
+
+            <div class="product-card scroll-reveal" data-category="poleras">
+                <div class="product-img-container">
+                    <img src="imagenes/top4.png" alt="Polera" class="product-img" id="img-p4">
+                </div>
+                <h3>Polera Oversize Pink</h3>
+                <p>Franela reactiva</p>
+                <span class="price">--</span>
+                <div class="colors">
+                    <span class="color-dot" style="background:#481818" onclick="changeColor('p4', 'imagenes/top4.png')"></span>
+                    <span class="color-dot" style="background:#25833e" onclick="changeColor('p4', 'imagenes/top4_perico.png')"></span>
+                    <span class="color-dot" style="background:#f2f3f4; border-color: #00000080  " onclick="changeColor('p4', 'imagenes/top4_blanco.png')"></span>
+                </div>
+                <button class="btn-ws-order" onclick="orderWhatsApp('Polera Oversize Pink')"><i class='bx bxl-whatsapp'></i> Pedir</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="yf-info-container">
+        <div class="yf-info-wrapper">
+            <div class="yf-info-item">
+                <div class="yf-info-icon"><i class='bx bx-package'></i></div>
+                <h3 class="yf-info-title">HORARIO DE ATENCIÓN</h3>
+                <p class="yf-info-text">Lunes a Viernes, 8 am - 5 pm</p>
+            </div>
+            <div class="yf-info-item">
+                <div class="yf-info-icon"><i class='bx bx-time-five'></i></div>
+                <h3 class="yf-info-title">TIEMPO DE ENTREGA</h3>
+                <p class="yf-info-text">Máximo 3 días en Lima y 10 días en provincia.</p>
+            </div>
+            <div class="yf-info-item">
+                <div class="yf-info-icon"><i class='bx bxs-truck'></i></div>
+                <h3 class="yf-info-title">DELIVERY GRATIS</h3>
+                <p class="yf-info-text">Por compras desde 300 soles (máx. 5 prendas).</p>
+            </div>
+            <div class="yf-info-item">
+                <div class="yf-info-icon"><i class='bx bx-calendar-check'></i></div>
+                <h3 class="yf-info-title">RECOJO EN TIENDA</h3>
+                <p class="yf-info-text">Gratis en nuestras tiendas hasta en 4 días útiles.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-container">
+        <div class="slider-track">
+            <div class="slide"><img src="imagenes/colores2.jpeg" alt=""></div>
+            <div class="slide"><img src="imagenes/colores1.jpeg" alt=""></div>
+            <div class="slide"><img src="imagenes/top1.png" alt=""></div>
+            <div class="slide"><img src="imagenes/top2.png" alt=""></div>
+            <div class="slide"><img src="imagenes/top4_blanco.png" alt=""></div>
+            <div class="slide"><img src="imagenes/top3.png" alt=""></div>
+
+             <div class="slide"><img src="imagenes/top1_rojo.png" alt=""></div>
+            <div class="slide"><img src="imagenes/top4_perico.png" alt=""></div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-content scroll-reveal">
+            <button class="btn-wholesale" onclick="orderWhatsApp('Información Pedidos al por Mayor')">Pedidos al por mayor</button>
+        </div>
+        <p>&copy; 2026 Yami Fashion - Todos los derechos reservados</p>
+    </footer>
+
+
+</body>
+</html>
+
+
+
