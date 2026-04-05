@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+
 </head>
-<script src="script.js " defer></script>
+
 
 <body>
 
@@ -36,6 +37,7 @@
     <main id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content scroll-reveal">
+            <p >ROPA PARA MUJER</p>
             <h1>TIENDA DE ROPA</h1>
             <p class="subtitle">Elegancia y estilo exclusivo pensado para la mujer de hoy</p>
             <a href="#productos" class="btn-main">Ver Promociones</a>
@@ -43,34 +45,29 @@
         </div>
     </main>
 
-
     <section class="custom-section-yf">
-    <div class="custom-yf-container">
-        <div class="custom-yf-text-content">
-            <h2 class="custom-yf-title">Nuestra Esencia</h2>
-            <p class="custom-yf-description">
-                En <strong>Yami Fashion</strong>, no solo vendemos ropa, creamos experiencias de estilo. 
-                Cada prenda es seleccionada cuidadosamente para resaltar tu personalidad y brindarte la comodidad que mereces en cada momento del día.
-            </p>
-            <a href="#productos" class="btn-main">Saber más</a>
-        </div>
-
-        <div class="custom-yf-slider-box">
-            <div class="custom-yf-slide-wrapper">
-                <img id="custom-yf-img" src="imagenes/colores2.jpeg" alt="Slider Image">
+        <div class="custom-yf-container">
+            <div class="custom-yf-text-content">
+                <h2 class="custom-yf-title">Nuestra Esencia</h2>
+                <p class="custom-yf-description">
+                    En <strong>Yami Fashion</strong>, no solo vendemos ropa, creamos experiencias de estilo. 
+                    Cada prenda es seleccionada cuidadosamente para resaltar tu personalidad y brindarte la comodidad que mereces en cada momento del día.
+                </p>
+                <a href="#productos" class="btn-main">Saber más</a>
             </div>
-
-            
-            <div class="custom-yf-caption-container">
-                <p id="custom-yf-caption">Calidad en cada costura</p>
+            <div class="custom-yf-slider-box">
+                <div class="custom-yf-slide-wrapper">
+                    <img id="custom-yf-img" src="imagenes/colores2.jpeg" alt="Slider Image">
+                </div>
+                <div class="custom-yf-caption-container">
+                    <p id="custom-yf-caption">Calidad en cada costura</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="productos" class="products-section">
         <h2 class="scroll-reveal">Nuestros Productos</h2>
-        
         <div class="filter-container scroll-reveal">
             <input type="text" id="search" placeholder="¿Qué estás buscando hoy?">
             <div class="categories">
@@ -84,66 +81,82 @@
 
         <div class="products-grid" id="grid-productos">
             <div class="product-card scroll-reveal" data-category="polos">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p1')">
                     <img src="imagenes/top1.png" alt="Polo" class="product-img" id="img-p1">
                 </div>
                 <h3>Polo Premium Dama</h3>
-                <p>Algodón reactivo</p>
-                <span class="price">--</span>
+                <p>Algodón reactivo de alta calidad</p>
+                <span class="price">S/ 45.00</span>
                 <div class="colors">
-                    <span class="color-dot" style="background:#a489b0; " onclick="changeColor('p1', 'imagenes/top1.png')"></span>
-                      <span class="color-dot" style="background:#edeeed; border-color: #242323ae;" onclick="changeColor('p1', 'imagenes/top1_blanco.png')"></span>
+                    <span class="color-dot" style="background:#a489b0;" onclick="changeColor('p1', 'imagenes/top1.png')"></span>
+                    <span class="color-dot" style="background:#edeeed;" onclick="changeColor('p1', 'imagenes/top1_blanco.png')"></span>
                     <span class="color-dot" style="background:red" onclick="changeColor('p1', 'imagenes/top1_rojo.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Polo Premium Dama')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
 
             <div class="product-card scroll-reveal" data-category="tops">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p2')">
                     <img src="imagenes/top2.png" alt="Top" class="product-img" id="img-p2">
                 </div>
-                <h3>Top Elegance Black</h3><br>
-                <p>Ajuste perfecto</p>
-                <span class="price">--</span>
+                <h3>Top Elegance Black</h3>
+                <p>Diseño ergonómico con ajuste perfecto</p>
+                <span class="price">S/ 39.00</span>
                 <div class="colors">
-                    <span class="color-dot" style="background:#000000" onclick="changeColor('p2', 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80')"></span>
-                    <span class="color-dot" style="background:#ffffff" onclick="changeColor('p2', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80')"></span>
+                    <span class="color-dot" style="background:#000000" onclick="changeColor('p2', 'imagenes/top2.png')"></span>
+                    <span class="color-dot" style="background:#ffffff" onclick="changeColor('p2', 'imagenes/top2_blanco.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Top Elegance Black')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
 
             <div class="product-card scroll-reveal" data-category="pijamas">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p3')">
                     <img src="imagenes/top3.png" alt="Pijama" class="product-img" id="img-p3">
                 </div>
                 <h3>Pijama Soft Dream</h3>
-                <p>Seda francesa</p>
-                <span class="price">--</span>
+                <p>Seda francesa ultra suave al tacto</p>
+                <span class="price">S/ 85.00</span>
                 <div class="colors">
-                    <span class="color-dot" style="background:#f8c291" onclick="changeColor('p3', 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80')"></span>
-                    <span class="color-dot" style="background:#6a89cc" onclick="changeColor('p3', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80')"></span>
+                    <span class="color-dot" style="background:#f8c291" onclick="changeColor('p3', 'imagenes/top3.png')"></span>
+                    <span class="color-dot" style="background:#6a89cc" onclick="changeColor('p3', 'imagenes/top3_azul.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Pijama Soft Dream')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
 
             <div class="product-card scroll-reveal" data-category="poleras">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p4')">
                     <img src="imagenes/top4.png" alt="Polera" class="product-img" id="img-p4">
                 </div>
                 <h3>Polera Oversize Pink</h3>
-                <p>Franela reactiva</p>
-                <span class="price">--</span>
+                <p>Franela reactiva ideal para el invierno</p>
+                <span class="price">S/ 65.00</span>
                 <div class="colors">
                     <span class="color-dot" style="background:#481818" onclick="changeColor('p4', 'imagenes/top4.png')"></span>
                     <span class="color-dot" style="background:#25833e" onclick="changeColor('p4', 'imagenes/top4_perico.png')"></span>
-                    <span class="color-dot" style="background:#f2f3f4; border-color: #00000080  " onclick="changeColor('p4', 'imagenes/top4_blanco.png')"></span>
+                    <span class="color-dot" style="background:#f2f3f4;" onclick="changeColor('p4', 'imagenes/top4_blanco.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Polera Oversize Pink')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
         </div>
     </section>
 
-    
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-img-side">
+                <img id="modalImg" src="" alt="Producto Grande">
+            </div>
+            <div class="modal-info-side">
+                <h2 id="modalTitle">Título</h2>
+                <span class="modal-price" id="modalPrice">S/ 0.00</span>
+                <p id="modalDesc">Descripción larga aquí...</p>
+                <div class="colors" id="modalColors">
+                    </div><br>
+                <button class="btn-ws-order" id="modalBtnOrder"><i class='bx bxl-whatsapp'></i> Ordenar ahora</button>
+            </div>
+        </div>
+    </div>
+
     <section class="yf-info-container">
         <div class="yf-info-wrapper">
             <div class="yf-info-item">
@@ -171,15 +184,12 @@
 
     <section class="slider-container">
         <div class="slider-track">
-            <div class="slide"><img src="imagenes/colores2.jpeg" alt=""></div>
-            <div class="slide"><img src="imagenes/colores1.jpeg" alt=""></div>
+            <div class="slide"><img src="imagenes/body1.jpeg" alt=""></div>
             <div class="slide"><img src="imagenes/top1.png" alt=""></div>
-            <div class="slide"><img src="imagenes/top2.png" alt=""></div>
-            <div class="slide"><img src="imagenes/top4_blanco.png" alt=""></div>
-            <div class="slide"><img src="imagenes/top3.png" alt=""></div>
-
-             <div class="slide"><img src="imagenes/top1_rojo.png" alt=""></div>
+            <div class="slide"><img src="imagenes/top1_blanco.png" alt=""></div>
             <div class="slide"><img src="imagenes/top4_perico.png" alt=""></div>
+            <div class="slide"><img src="imagenes/top4_perico.png" alt=""></div>
+            <div class="slide"><img src="imagenes/lentejuelas.jpeg" alt=""></div>
         </div>
     </section>
 
@@ -190,9 +200,8 @@
         <p>&copy; 2026 Yami Fashion - Todos los derechos reservados</p>
     </footer>
 
+    
 
+        <script src="script.js" defer></script>
 </body>
 </html>
-
-
-

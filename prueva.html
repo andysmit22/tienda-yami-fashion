@@ -6,211 +6,127 @@
     <title>Yami Fashion | Tienda de Ropa para Mujer</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
 </head>
 <style>
-        :root {
-            --primary: #ff4d94; 
-            --dark: #1a1a1a;
-            --light: #ffffff;
-            --grey: #f4f4f4;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
+    :root {
+        --primary: #ff4d94; 
+        --dark: #1a1a1a;
+        --light: #ffffff;
+        --grey: #f4f4f4;
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
 
-        /* --- BOTONES FLOTANTES --- */
-        .floating-buttons { position: fixed; bottom: 30px; right: 20px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; }
-        .btn-float { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; transition: var(--transition); text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .whatsapp { background: #25d366; }
-        .tiktok { background: #000; }
-        .btn-float:hover { transform: scale(1.1) translateY(-5px); }
+    /* --- BOTONES FLOTANTES --- */
+    .floating-buttons { position: fixed; bottom: 30px; right: 20px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; }
+    .btn-float { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; transition: var(--transition); text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .whatsapp { background: #25d366; }
+    .tiktok { background: #000; }
+    .btn-float:hover { transform: scale(1.1) translateY(-5px); }
 
-        /* --- HEADER --- */
-        header { position: fixed; top: 0; 
-            width: 100%; 
-            height: 90px;
-             display: flex; 
-             justify-content: space-between; 
-             align-items: center; padding: 0 5%;
-              background: rgba(0,0,0,0.2);
-               backdrop-filter: blur(10px);
-                z-index: 1000; transition: 0.3s;
-             }
+    /* --- HEADER --- */
+    header { position: fixed; top: 0; width: 100%; height: 90px; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); z-index: 1000; transition: 0.3s; }
+    .logo-container { display: flex; flex-direction: column; align-items: center; }
+    .logo { width: 45px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+    .brand-name { color: var(--light); font-weight: 700; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li a { color: white; text-decoration: none; margin-left: 25px; font-weight: 500; transition: 0.3s; font-size: 0.9rem; }
+    nav ul li a:hover { color: var(--primary); }
 
-             
-        .logo-container { display: flex; flex-direction: column; align-items: center; }
-        .logo { width: 45px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
-        .brand-name { color: var(--light); font-weight: 700; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li a { color: white; text-decoration: none; margin-left: 25px; font-weight: 500; transition: 0.3s; font-size: 0.9rem; }
-        nav ul li a:hover { color: var(--primary); }
+    /* --- HERO --- */
+    .hero { height: 100vh; position: relative; background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; transition: background-image 1s ease-in-out; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
+    .hero-content { position: relative; z-index: 10; max-width: 800px; padding: 20px; }
+    .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 10px; }
+    .subtitle { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+    .btn-main { padding: 15px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; display: inline-block; transition: var(--transition); box-shadow: 0 10px 20px rgba(255, 77, 148, 0.3); }
+    .btn-main:hover { transform: translateY(-3px); background: #e63d85; }
+    .changing-text { margin-top: 20px; font-style: italic; font-size: 1.1rem; color:rgb(211, 87, 87); font-weight: 600; }
 
-        /* --- HERO --- */
-        .hero { height: 100vh; position: relative; background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; transition: background-image 1s ease-in-out; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
-        .hero-content { position: relative; z-index: 10; max-width: 800px; padding: 20px; }
-        .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
-        .btn-main { padding: 15px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; display: inline-block; transition: var(--transition); box-shadow: 0 10px 20px rgba(255, 77, 148, 0.3); }
-        .btn-main:hover { transform: translateY(-3px); background: #e63d85; }
-        .changing-text { margin-top: 20px; font-style: italic; font-size: 1.1rem; color:rgb(211, 87, 87); font-weight: 600; }
+    /* --- INFO SECCIÓN --- */
+    .yf-info-container { padding: 60px 5%; background-color: #ffffff; width: 100%; overflow: hidden; }
+    .yf-info-wrapper { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .yf-info-item { flex: 1; min-width: 220px; text-align: center; padding: 10px; }
+    .yf-info-icon { font-size: 3.5rem; color: #000; margin-bottom: 20px; display: flex; justify-content: center; }
+    .yf-info-title { font-size: 0.95rem; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 10px; min-height: 45px; }
+    .yf-info-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 1px; background-color: #7a7a7a; }
+    .yf-info-text { font-size: 0.85rem; color: #555; line-height: 1.6; margin-top: 15px; }
 
-        /* --- INFO SECCIÓN --- */
-        .yf-info-container { padding: 60px 5%; background-color: #ffffff; width: 100%; overflow: hidden; }
-        .yf-info-wrapper { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .yf-info-item { flex: 1; min-width: 220px; text-align: center; padding: 10px; }
-        .yf-info-icon { font-size: 3.5rem; color: #000; margin-bottom: 20px; display: flex; justify-content: center; }
-        .yf-info-title { font-size: 0.95rem; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 10px; min-height: 45px; }
-        .yf-info-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 1px; background-color: #7a7a7a; }
-        .yf-info-text { font-size: 0.85rem; color: #555; line-height: 1.6; margin-top: 15px; }
+    /* --- PRODUCTOS --- */
+    .products-section { padding: 80px 5%; background: #fdfdfd; }
+    .products-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; }
+    .filter-container { margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    #search { padding: 12px 25px; width: 100%; max-width: 400px; border-radius: 30px; border: 1px solid #ddd; outline: none; transition: 0.3s; }
+    #search:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255, 77, 148, 0.1); }
+    .categories { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .btn-filter { padding: 10px 25px; border-radius: 25px; border: 1px solid #eee; background: white; cursor: pointer; transition: 0.3s; font-weight: 500; color: #666; }
+    .btn-filter.active, .btn-filter:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-        /* --- PRODUCTOS --- */
-        .products-section { padding: 80px 5%; background: #fdfdfd; }
-        .products-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; }
-        .filter-container { margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        #search { padding: 12px 25px; width: 100%; max-width: 400px; border-radius: 30px; border: 1px solid #ddd; outline: none; transition: 0.3s; }
-        #search:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255, 77, 148, 0.1); }
-        .categories { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-        .btn-filter { padding: 10px 25px; border-radius: 25px; border: 1px solid #eee; background: white; cursor: pointer; transition: 0.3s; font-weight: 500; color: #666; }
-        .btn-filter.active, .btn-filter:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .product-card { background: white; padding: 15px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; display: block; }
+    .product-card.hidden { display: none; }
+    .product-card:hover { transform: translateY(-10px); }
+    .product-img-container { width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 15px; margin-bottom: 15px; background: #f0f0f0; cursor: zoom-in; }
+    .product-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+    .product-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 5px; }
+    .product-card p { font-size: 0.9rem; color: #777; margin-bottom: 10px; }
+    .price { display: block; font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+    .colors { display: flex; justify-content: center; gap: 8px; margin-bottom: 15px; }
+    .color-dot { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid white; outline: 1px solid #ddd; }
+    .btn-ws-order { width: 100%; padding: 12px; border: none; background: #25d366; color: white; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-ws-order:hover { background: #1ebe57; }
 
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .product-card { background: white; padding: 15px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; display: block; }
-        .product-card.hidden { display: none; }
-        .product-card:hover { transform: translateY(-10px); }
-        .product-img-container { width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 15px; margin-bottom: 15px; background: #f0f0f0; }
-        .product-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
-        .product-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 5px; }
-        .product-card p { font-size: 0.9rem; color: #777; margin-bottom: 10px; }
-        .price { display: block; font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
-        .colors { display: flex; justify-content: center; gap: 8px; margin-bottom: 15px; }
-        .color-dot { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid white; outline: 1px solid #ddd; }
-        .btn-ws-order { width: 100%; padding: 12px; border: none; background: #25d366; color: white; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .btn-ws-order:hover { background: #1ebe57; }
+    /* --- MODAL DE PRODUCTO (NUEVO) --- */
+    .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+    .modal-content { background: white; width: 100%; max-width: 900px; border-radius: 25px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; position: relative; animation: modalAnim 0.4s ease; }
+    @keyframes modalAnim { from { opacity:0; transform: scale(0.9); } to { opacity:1; transform: scale(1); } }
+    .modal-close { position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer; z-index: 10; color: var(--dark); transition: 0.3s; }
+    .modal-close:hover { color: var(--primary); }
+    .modal-img-side { background: #f9f9f9; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .modal-img-side img { width: 100%; height: 500px; object-fit: contain; border-radius: 15px; }
+    .modal-info-side { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .modal-info-side h2 { font-size: 2rem; margin-bottom: 10px; color: var(--dark); }
+    .modal-info-side .modal-price { font-size: 1.8rem; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+    .modal-info-side p { color: #666; line-height: 1.6; margin-bottom: 25px; }
+    
+    @media (max-width: 768px) {
+        .modal-content { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+        .modal-img-side img { height: 300px; }
+        .modal-info-side { padding: 20px; }
+        header { height: auto; padding: 15px; flex-direction: column; }
+        nav ul { margin-top: 15px; }
+        .hero h1 { font-size: 2.5rem; }
+        .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+    }
 
-        /* --- SLIDER --- */
-        .slider-container { overflow: hidden; padding: 50px 0; background: #fff; }
-        .slider-track { display: flex; width: calc(250px * 12); animation: scroll 30s linear infinite; }
-        .slide { width: 250px; padding: 0 15px; }
-        .slide img { width: 100%; aspect-ratio: 1/1; border-radius: 15px; object-fit: cover; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 6)); } }
+    /* --- SLIDER --- */
+    .slider-container { overflow: hidden; padding: 50px 0; background: #fff; }
+    .slider-track { display: flex; width: calc(250px * 12); animation: scroll 30s linear infinite; }
+    .slide { width: 250px; padding: 0 15px; }
+    .slide img { width: 100%; aspect-ratio: 1/1; border-radius: 15px; object-fit: cover; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 6)); } }
 
-        /* --- FOOTER --- */
-        footer { background: var(--dark); color: white; padding: 60px 5% 20px; text-align: center; }
-        .btn-wholesale { padding: 15px 35px; background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600; margin-bottom: 40px; transition: 0.3s; }
-        .btn-wholesale:hover { background: var(--primary); color: white; }
-        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-        .scroll-reveal.active { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            header { height: auto; padding: 15px; 
-                flex-direction: column; }
-                
-            nav ul { margin-top: 15px; }
-            .hero h1 { font-size: 2.5rem; }
-            .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
-        }
-
-
-
-
-
+    /* --- FOOTER --- */
+    footer { background: var(--dark); color: white; padding: 60px 5% 20px; text-align: center; }
+    .btn-wholesale { padding: 15px 35px; background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600; margin-bottom: 40px; transition: 0.3s; }
+    .btn-wholesale:hover { background: var(--primary); color: white; }
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+    .scroll-reveal.active { opacity: 1; transform: translateY(0); }
 
     /* Estilos Únicos para la Sección Personalizada */
-    .custom-section-yf {
-        padding: 80px 5%;
-        background-color: #ffffff;
-        overflow: hidden;
-    }
-
-    .custom-yf-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
-    }
-
-    .custom-yf-title {
-        font-size: 2.8rem;
-        color: var(--dark);
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        position: relative;
-    }
-
-    .custom-yf-title::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background: var(--primary);
-    }
-
-    .custom-yf-description {
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 30px;
-    }
-
-    /* Slider Styles */
-    .custom-yf-slider-box {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    }
-
-    .custom-yf-slide-wrapper {
-        width: 100%;
-        height: 450px;
-        background: #eee;
-    }
-
-    .custom-yf-slide-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: opacity 0.8s ease-in-out;
-    }
-
-    .custom-yf-caption-container {
-        background: var(--dark);
-        padding: 15px;
-        text-align: center;
-    }
-
-    #custom-yf-caption {
-        color: var(--light);
-        font-weight: 500;
-        font-size: 1rem;
-        transition: transform 0.5s, opacity 0.5s;
-    }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-        .custom-yf-container {
-            grid-template-columns: 1fr;
-            gap: 30px;
-            text-align: center;
-        }
-
-        .custom-yf-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .custom-yf-slide-wrapper {
-            height: 350px;
-        }
-    }
+    .custom-section-yf { padding: 80px 5%; background-color: #ffffff; overflow: hidden; }
+    .custom-yf-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .custom-yf-title { font-size: 2.8rem; color: var(--dark); margin-bottom: 20px; text-transform: uppercase; position: relative; }
+    .custom-yf-title::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 60px; height: 3px; background: var(--primary); }
+    .custom-yf-description { font-size: 1.1rem; color: #555; line-height: 1.8; margin-bottom: 30px; }
+    .custom-yf-slider-box { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+    .custom-yf-slide-wrapper { width: 100%; height: 450px; background: #eee; }
+    .custom-yf-slide-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.8s ease-in-out; }
+    .custom-yf-caption-container { background: var(--dark); padding: 15px; text-align: center; }
+    #custom-yf-caption { color: var(--light); font-weight: 500; font-size: 1rem; transition: transform 0.5s, opacity 0.5s; }
 </style>
+
 <body>
 
     <div class="floating-buttons">
@@ -243,34 +159,29 @@
         </div>
     </main>
 
-
     <section class="custom-section-yf">
-    <div class="custom-yf-container">
-        <div class="custom-yf-text-content">
-            <h2 class="custom-yf-title">Nuestra Esencia</h2>
-            <p class="custom-yf-description">
-                En <strong>Yami Fashion</strong>, no solo vendemos ropa, creamos experiencias de estilo. 
-                Cada prenda es seleccionada cuidadosamente para resaltar tu personalidad y brindarte la comodidad que mereces en cada momento del día.
-            </p>
-            <a href="#productos" class="btn-main">Saber más</a>
-        </div>
-
-        <div class="custom-yf-slider-box">
-            <div class="custom-yf-slide-wrapper">
-                <img id="custom-yf-img" src="imagenes/colores2.jpeg" alt="Slider Image">
+        <div class="custom-yf-container">
+            <div class="custom-yf-text-content">
+                <h2 class="custom-yf-title">Nuestra Esencia</h2>
+                <p class="custom-yf-description">
+                    En <strong>Yami Fashion</strong>, no solo vendemos ropa, creamos experiencias de estilo. 
+                    Cada prenda es seleccionada cuidadosamente para resaltar tu personalidad y brindarte la comodidad que mereces en cada momento del día.
+                </p>
+                <a href="#productos" class="btn-main">Saber más</a>
             </div>
-
-            
-            <div class="custom-yf-caption-container">
-                <p id="custom-yf-caption">Calidad en cada costura</p>
+            <div class="custom-yf-slider-box">
+                <div class="custom-yf-slide-wrapper">
+                    <img id="custom-yf-img" src="imagenes/colores2.jpeg" alt="Slider Image">
+                </div>
+                <div class="custom-yf-caption-container">
+                    <p id="custom-yf-caption">Calidad en cada costura</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="productos" class="products-section">
         <h2 class="scroll-reveal">Nuestros Productos</h2>
-        
         <div class="filter-container scroll-reveal">
             <input type="text" id="search" placeholder="¿Qué estás buscando hoy?">
             <div class="categories">
@@ -284,66 +195,82 @@
 
         <div class="products-grid" id="grid-productos">
             <div class="product-card scroll-reveal" data-category="polos">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p1')">
                     <img src="imagenes/top1.png" alt="Polo" class="product-img" id="img-p1">
                 </div>
                 <h3>Polo Premium Dama</h3>
-                <p>Algodón reactivo</p>
-                <span class="price">--</span>
+                <p>Algodón reactivo de alta calidad</p>
+                <span class="price">S/ 45.00</span>
                 <div class="colors">
-                    <span class="color-dot" style="background:#a489b0; " onclick="changeColor('p1', 'imagenes/top1.png')"></span>
-                      <span class="color-dot" style="background:#edeeed; border-color: #242323ae;" onclick="changeColor('p1', 'imagenes/top1_blanco.png')"></span>
+                    <span class="color-dot" style="background:#a489b0;" onclick="changeColor('p1', 'imagenes/top1.png')"></span>
+                    <span class="color-dot" style="background:#edeeed;" onclick="changeColor('p1', 'imagenes/top1_blanco.png')"></span>
                     <span class="color-dot" style="background:red" onclick="changeColor('p1', 'imagenes/top1_rojo.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Polo Premium Dama')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
 
             <div class="product-card scroll-reveal" data-category="tops">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p2')">
                     <img src="imagenes/top2.png" alt="Top" class="product-img" id="img-p2">
                 </div>
-                <h3>Top Elegance Black</h3><br>
-                <p>Ajuste perfecto</p>
-                <span class="price">--</span>
+                <h3>Top Elegance Black</h3>
+                <p>Diseño ergonómico con ajuste perfecto</p>
+                <span class="price">S/ 39.00</span>
                 <div class="colors">
-                    <span class="color-dot" style="background:#000000" onclick="changeColor('p2', 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80')"></span>
-                    <span class="color-dot" style="background:#ffffff" onclick="changeColor('p2', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80')"></span>
+                    <span class="color-dot" style="background:#000000" onclick="changeColor('p2', 'imagenes/top2.png')"></span>
+                    <span class="color-dot" style="background:#ffffff" onclick="changeColor('p2', 'imagenes/top2_blanco.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Top Elegance Black')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
 
             <div class="product-card scroll-reveal" data-category="pijamas">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p3')">
                     <img src="imagenes/top3.png" alt="Pijama" class="product-img" id="img-p3">
                 </div>
                 <h3>Pijama Soft Dream</h3>
-                <p>Seda francesa</p>
-                <span class="price">--</span>
+                <p>Seda francesa ultra suave al tacto</p>
+                <span class="price">S/ 85.00</span>
                 <div class="colors">
-                    <span class="color-dot" style="background:#f8c291" onclick="changeColor('p3', 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80')"></span>
-                    <span class="color-dot" style="background:#6a89cc" onclick="changeColor('p3', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80')"></span>
+                    <span class="color-dot" style="background:#f8c291" onclick="changeColor('p3', 'imagenes/top3.png')"></span>
+                    <span class="color-dot" style="background:#6a89cc" onclick="changeColor('p3', 'imagenes/top3_azul.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Pijama Soft Dream')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
 
             <div class="product-card scroll-reveal" data-category="poleras">
-                <div class="product-img-container">
+                <div class="product-img-container" onclick="openModal('p4')">
                     <img src="imagenes/top4.png" alt="Polera" class="product-img" id="img-p4">
                 </div>
                 <h3>Polera Oversize Pink</h3>
-                <p>Franela reactiva</p>
-                <span class="price">--</span>
+                <p>Franela reactiva ideal para el invierno</p>
+                <span class="price">S/ 65.00</span>
                 <div class="colors">
                     <span class="color-dot" style="background:#481818" onclick="changeColor('p4', 'imagenes/top4.png')"></span>
                     <span class="color-dot" style="background:#25833e" onclick="changeColor('p4', 'imagenes/top4_perico.png')"></span>
-                    <span class="color-dot" style="background:#f2f3f4; border-color: #00000080  " onclick="changeColor('p4', 'imagenes/top4_blanco.png')"></span>
+                    <span class="color-dot" style="background:#f2f3f4;" onclick="changeColor('p4', 'imagenes/top4_blanco.png')"></span>
                 </div>
                 <button class="btn-ws-order" onclick="orderWhatsApp('Polera Oversize Pink')"><i class='bx bxl-whatsapp'></i> Pedir</button>
             </div>
         </div>
     </section>
 
-    
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-img-side">
+                <img id="modalImg" src="" alt="Producto Grande">
+            </div>
+            <div class="modal-info-side">
+                <h2 id="modalTitle">Título</h2>
+                <span class="modal-price" id="modalPrice">S/ 0.00</span>
+                <p id="modalDesc">Descripción larga aquí...</p>
+                <div class="colors" id="modalColors">
+                    </div><br>
+                <button class="btn-ws-order" id="modalBtnOrder"><i class='bx bxl-whatsapp'></i> Ordenar ahora</button>
+            </div>
+        </div>
+    </div>
+
     <section class="yf-info-container">
         <div class="yf-info-wrapper">
             <div class="yf-info-item">
@@ -387,7 +314,8 @@
         <p>&copy; 2026 Yami Fashion - Todos los derechos reservados</p>
     </footer>
 
- <script>
+    <script>
+        // --- FILTROS Y BÚSQUEDA ---
         const filterButtons = document.querySelectorAll('.btn-filter');
         const productCards = document.querySelectorAll('.product-card');
         const searchInput = document.getElementById('search');
@@ -415,31 +343,20 @@
 
         searchInput.addEventListener('input', filterProducts);
 
+        // --- HERO BACKGROUND SLIDER ---
         const hero = document.getElementById('inicio');
-        const images = [
+        const bgImages = [
             'url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80")',
             'url("https://thumbs.dreamstime.com/b/ropa-y-accesorios-del-vintage-mujer-en-el-fondo-de-madera-61343543.jpg")',
-             'url("https://i.pinimg.com/originals/fe/d5/12/fed51260f0a220991c1d181a2aa0f412.png")',
-            'url("https://png.pngtree.com/thumb_back/fh260/background/20240408/pngtree-clothing-store-in-shopping-mall-boutique-shop-interior-blur-defocused-background-image_15650933.jpg")'
+            'url("https://i.pinimg.com/originals/fe/d5/12/fed51260f0a220991c1d181a2aa0f412.png")'
         ];
-        let currentImg = 0;
+        let currentBg = 0;
         setInterval(() => {
-            currentImg = (currentImg + 1) % images.length;
-            hero.style.backgroundImage = images[currentImg];
-        }, 4000);
+            currentBg = (currentBg + 1) % bgImages.length;
+            hero.style.backgroundImage = bgImages[currentBg];
+        }, 5000);
 
-        const textElement = document.getElementById('changing-text');
-        const phrases = ["Colección Primavera 2026", "Envíos a todo el Perú", "Lo último en tendencia"];
-        let currentPhrase = 0;
-        setInterval(() => {
-            currentPhrase = (currentPhrase + 1) % phrases.length;
-            textElement.style.opacity = 0;
-            setTimeout(() => {
-                textElement.innerText = phrases[currentPhrase];
-                textElement.style.opacity = 1;
-            }, 500);
-        }, 3000);
-
+        // --- REVELACIÓN AL SCROLL ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -447,7 +364,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-        // LÓGICA DE CAMBIO DE COLOR (Dinámica para todos)
+        // --- LÓGICA DE CAMBIO DE COLOR EN TARJETA ---
         function changeColor(id, imgSrc) {
             const img = document.getElementById(`img-${id}`);
             if(img) {
@@ -459,65 +376,83 @@
             }
         }
 
+        // --- WHATSAPP ---
         function orderWhatsApp(productName) {
             const tel = "51976956559";
             const msg = encodeURIComponent(`¡Hola Yami Fashion! Deseo más info sobre: ${productName}`);
             window.open(`https://wa.me/${tel}?text=${msg}`, '_blank');
         }
 
+        // --- MODAL DE PRODUCTO (LO NUEVO) ---
+        function openModal(id) {
+            const card = document.getElementById(`img-${id}`).closest('.product-card');
+            const title = card.querySelector('h3').innerText;
+            const price = card.querySelector('.price').innerText;
+            const desc = card.querySelector('p').innerText;
+            const currentImg = card.querySelector('.product-img').src;
+            const colorDots = card.querySelector('.colors').innerHTML;
+
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalDesc').innerText = desc + ". Esta prenda cuenta con acabados premium y diseño exclusivo de nuestra temporada 2026.";
+            document.getElementById('modalImg').src = currentImg;
+            document.getElementById('modalColors').innerHTML = colorDots;
+            
+            // Re-asignar eventos a los puntos de color dentro del modal
+            const modalDots = document.getElementById('modalColors').querySelectorAll('.color-dot');
+            modalDots.forEach(dot => {
+                const onClickStr = dot.getAttribute('onclick');
+                // Modificamos el onclick para que cambie la imagen del modal
+                const newImgPath = onClickStr.split("'")[3];
+                dot.onclick = function() {
+                    document.getElementById('modalImg').src = newImgPath;
+                    // También actualiza la tarjeta de atrás por coherencia
+                    changeColor(id, newImgPath);
+                };
+            });
+
+            document.getElementById('modalBtnOrder').onclick = () => orderWhatsApp(title);
+            document.getElementById('productModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Evita scroll
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) closeModal();
+        }
+
+        // --- SLIDER PERSONALIZADO DE ESENCIA ---
+        const customYfData = [
+            { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGqfiiUYl_9tY6Ew0Z-Zvp0MtlibIdxmiLQ&s", caption: "Diseños exclusivos para ti" },
+            { img: "imagenes/colores1.jpeg", caption: "Tendencia y elegancia 2026" },
+            { img: "imagenes/colores2.jpeg", caption: "Encuentra tu estilo ideal" }
+        ];
+        let customYfIndex = 0;
+        setInterval(() => {
+            customYfIndex = (customYfIndex + 1) % customYfData.length;
+            const imgEl = document.getElementById('custom-yf-img');
+            const capEl = document.getElementById('custom-yf-caption');
+            imgEl.style.opacity = 0;
+            capEl.style.opacity = 0;
+            setTimeout(() => {
+                imgEl.src = customYfData[customYfIndex].img;
+                capEl.innerText = customYfData[customYfIndex].caption;
+                imgEl.style.opacity = 1;
+                capEl.style.opacity = 1;
+            }, 800);
+        }, 4000);
+
+        // Header color change on scroll
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.style.background = window.scrollY > 50 ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.2)";
-            header.style.height = window.scrollY > 50 ? "90px" : "90px";
         });
- </script>
-
- <script>
-    // Lógica del Slider Personalizado
-    const customYfData = [
-        {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGqfiiUYl_9tY6Ew0Z-Zvp0MtlibIdxmiLQ&s",
-            caption: "Diseños exclusivos para ti"
-        },
-        {
-            img: "imagenes/colores1.jpeg",
-            caption: "Tendencia y elegancia 2026"
-        },
-        {
-            img: " imagenes/colores2.jpeg",
-            caption: "Encuentra tu estilo ideal"
-        }
-    ];
-
-    let customYfIndex = 0;
-    const customYfImgEl = document.getElementById('custom-yf-img');
-    const customYfCapEl = document.getElementById('custom-yf-caption');
-
-    function updateCustomSlider() {
-        customYfIndex = (customYfIndex + 1) % customYfData.length;
-        
-        // Efecto de salida
-        customYfImgEl.style.opacity = "0";
-        customYfCapEl.style.opacity = "0";
-        customYfCapEl.style.transform = "translateY(10px)";
-
-        setTimeout(() => {
-            // Cambio de contenido
-            customYfImgEl.src = customYfData[customYfIndex].img;
-            customYfCapEl.innerText = customYfData[customYfIndex].caption;
-
-            // Efecto de entrada
-            customYfImgEl.style.opacity = "1";
-            customYfCapEl.style.opacity = "1";
-            customYfCapEl.style.transform = "translateY(0)";
-        }, 800);
-    }
-
-    // Intervalo de 3 segundos
-    setInterval(updateCustomSlider, 3000);
-</script>
+    </script>
 </body>
 </html>
-
-
-
